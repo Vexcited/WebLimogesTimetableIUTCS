@@ -13,7 +13,7 @@ export default createHandler(() => (
 
           <meta name="color-scheme" content="dark light" />
           <meta name="msapplication-TileColor" content="#f2f4f4" />
-          <meta name="theme-color" content="#f2f4f4" />
+          <meta name="theme-color" content="#f2f4f4" data-sm />
 
           <title>EDT - IUT Informatique de Limoges</title>
           <meta name="title" content="EDT - IUT Informatique de Limoges" />
