@@ -125,6 +125,32 @@ export const makeLessonUniqueID = (lesson: ITimetableLesson): string => (
   btoa(`${lesson.start_date}-${lesson.end_date}-${lesson.content.room}-${lesson.content.teacher}`)
 );
 
+export const getLessonGroup = (lesson: ITimetableLesson, year: number): string => {
+  switch (lesson.type) {
+    case "TP":
+      return `G${lesson.group.main}${lesson.group.sub === 1 ? "A" : "B"}`;
+
+    case "TD":
+    case "DS":
+    case "SAE":
+      if (typeof lesson.group === "undefined") {
+        return `A${year}`;
+      }
+      else if (lesson.type === "SAE" && typeof lesson.group.sub !== "undefined") {
+        return `G${lesson.group.main}${lesson.group.sub === 1 ? "A" : "B"}`;
+      }
+      else {
+        return `G${lesson.group.main}`;
+      }
+
+    case "CM":
+    case "OTHER":
+      return `A${year}`;
+  }
+
+  throw new Error("not able to find lesson group")
+}
+
 export const getFullLessonContentType = (lesson: ITimetableLesson): string => {
   const lessonType = getLessonContentType(lesson);
 
