@@ -111,7 +111,7 @@ export const shortToFullTeacherName = (short: string): Teacher | undefined => {
 
     return Object.values(initials).find(({ name }) => {
       const [currFirstName, currLastName] = name.toLowerCase().split(" ");
-      return currLastName.toLowerCase() === lastName.toLowerCase() && currFirstName[0] === firstNameChar[0]
+      return currLastName === lastName && currFirstName[0] === firstNameChar[0]
     });
   }
 

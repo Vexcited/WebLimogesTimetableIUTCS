@@ -23,5 +23,5 @@ export const initializeNowRefresh = () => {
 
   __cached_interval = setInterval(() => {
     setNow(DateTime.now());
-  }, 1000 * 10);
+  }, 1000 * 1);
 };

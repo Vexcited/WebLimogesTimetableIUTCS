@@ -16,6 +16,14 @@ const Page: Component = () => {
   const [currentWeekNumber, setCurrentWeekNumber] = createSignal(-1);
   const [isCurrentlyInVacation, setCurrentlyInVacation] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
+  const [datetime, setDateTime] = createSignal<DateTime>(now());
+  const [isSyncedWithNow, setSyncedWithNow] = createSignal(true);
+
+  createEffect(on(now, (now) => {
+    if (!isSyncedWithNow()) return;
+    console.log("sync with", now);
+    setDateTime(now);
+  }));
 
   const currentWeekTimetableA1 = createMemo(() => getTemporaryTimetablesStore(1, currentWeekNumber()));
   const currentWeekTimetableA2 = createMemo(() => getTemporaryTimetablesStore(2, currentWeekNumber()));
@@ -132,7 +140,7 @@ const Page: Component = () => {
       setCurrentlyInVacation(false);
 
       // We get the current week number using timetables meta.
-      const currentWeekNumber = await getDayWeekNumber(now(), 1);
+      const currentWeekNumber = await getDayWeekNumber(datetime(), 1);
 
       // We don't await the refresh.
       refreshTimetableForWeekNumber(1, currentWeekNumber);
@@ -182,8 +190,8 @@ const Page: Component = () => {
    * the week changes to the next one. We'll update
    * the current week number.
    */
-  let lastNow = now();
-  createEffect(on(now, (now) => {
+  let lastNow = datetime();
+  createEffect(on(datetime, (now) => {
     if (now.weekNumber === lastNow.weekNumber) return;
     lastNow = now;
 
@@ -195,8 +203,8 @@ const Page: Component = () => {
 
     for (const key of Object.keys(rooms())) {
       const lesson = rooms()[key].find(lesson =>
-        now().toMillis() >= DateTime.fromISO(lesson.start_date).toMillis()
-        && now().toMillis() < DateTime.fromISO(lesson.end_date).toMillis()
+        datetime().toMillis() >= DateTime.fromISO(lesson.start_date).toMillis()
+        && datetime().toMillis() < DateTime.fromISO(lesson.end_date).toMillis()
       )
 
       filtered[key] = lesson;
@@ -275,13 +283,39 @@ const Page: Component = () => {
 
         <hr class="border-[rgb(80,80,80)]" />
 
+        <div class="flex flex-col gap-2">
+          <p>Vous visualisez les salles disponibles <span class="text-red">aujourd'hui, {datetime().toFormat("HH'h'mm", { locale: "fr" })}</span></p>
+
+          <input type="range" min={0} max={60 * 11.5} value={(datetime().hour * 60) - 60 * 8 + datetime().minute} class="w-full"
+            onInput={(event) => {
+              if (isSyncedWithNow())
+                setSyncedWithNow(false);
+
+              let h = event.currentTarget.valueAsNumber / 60;
+              const m = Math.round(h % 1 * 60);
+              h = Math.floor(h) + 8;
+
+              const date = new Date();
+              date.setHours(h, m, 0, 0);
+              setDateTime(DateTime.fromJSDate(date))
+            }}
+          />
+
+          <div class="flex justify-between -mx-2.5">
+            <p>8h00</p>
+            <p>19h30</p>
+          </div>
+
+
+        </div>
+
         <Floor label="Rez-de-chaussée" layout="rdc" />
         <Floor label="1er Étage" layout="roof1" />
         <Floor label="2ème Étage" layout="roof2" />
         <Floor label="Amphithéâtres" layout="theaters" />
       </div>
-
     </main>
   )
 }
-export default Page
+
+export default Page;
