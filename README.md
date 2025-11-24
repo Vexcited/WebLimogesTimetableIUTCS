@@ -77,7 +77,7 @@ interface Response {
 }
 ```
 
-### `GET /timetables/:year/:week_number`
+### `GET /timetable/:year/:week_number`
 
 Get the full timetable data for a given `:year` and `:week_number`.
 The `:week_number` is the one given by the IUT, not the one from the year.
