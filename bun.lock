@@ -18,10 +18,10 @@
         "localforage": "^1.10.0",
         "luxon": "^3.7.2",
         "mongoose": "^9.1.3",
-        "satone": "^0.0.13",
+        "satone": "^0.0.15",
         "solid-js": "^1.9.10",
         "swiper": "^12.0.3",
-        "unilim": "1.1.0",
+        "unilim": "^2.0.0",
       },
       "devDependencies": {
         "@iconify-json/mdi": "^1.2.3",
@@ -378,6 +378,8 @@
     "@literate.ink/pdf-inspector": ["@literate.ink/pdf-inspector@1.0.0", "", {}, "sha512-hlRFth61+1OUSw38Im86ot1ANFU4V2zGMLvmPEsWsIFY1s3y3ywCXw0KLGSaKWxk7auijr5SgXZxZlUolyGSkw=="],
 
     "@mongodb-js/saslprep": ["@mongodb-js/saslprep@1.4.4", "", { "dependencies": { "sparse-bitfield": "^3.0.3" } }, "sha512-p7X/ytJDIdwUfFL/CLOhKgdfJe1Fa8uw9seJYvdOmnP9JBWGWHW69HkOixXS6Wy9yvGf1MbhcS6lVmrhy4jm2g=="],
+
+    "@noble/hashes": ["@noble/hashes@2.0.1", "", {}, "sha512-XlOlEbQcE9fmuXxrVTXCTlG2nlRXa9Rj3rr5Ue/+tX+nmkgbX720YHh0VR3hBF9xDvwnb8D2shVGOwNx+ulArw=="],
 
     "@polka/url": ["@polka/url@1.0.0-next.29", "", {}, "sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww=="],
 
@@ -1355,7 +1357,7 @@
 
     "safer-buffer": ["safer-buffer@2.1.2", "", {}, "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg=="],
 
-    "satone": ["satone@0.0.13", "", { "dependencies": { "@babel/generator": "^7.28.6", "@babel/parser": "^7.28.6", "@babel/traverse": "^7.28.6", "@babel/types": "^7.28.6", "@elysiajs/eden": "^1.4.6", "@elysiajs/openapi": "^1.4.13", "@elysiajs/static": "^1.4.7", "bun-plugin-dtsx": "^0.9.9", "elysia": "^1.4.21", "vite": "7.3.1", "vite-plugin-pages": "^0.33.2", "vite-plugin-solid": "^2.11.10", "vite-tsconfig-paths": "^6.0.4" }, "bin": { "satone": "src/cli.ts" } }, "sha512-A4cE2kfHiH8mO6eXX0LESjNr6o8zZBEXZUkvATw8heIOB/Pl3jnaA9aB7FEu+wEuj4OxXhw8vM7Ptn2tVgJKQw=="],
+    "satone": ["satone@0.0.15", "", { "dependencies": { "@babel/generator": "^7.28.6", "@babel/parser": "^7.28.6", "@babel/traverse": "^7.28.6", "@babel/types": "^7.28.6", "@elysiajs/eden": "^1.4.6", "@elysiajs/openapi": "^1.4.13", "@elysiajs/static": "^1.4.7", "bun-plugin-dtsx": "^0.9.9", "elysia": "^1.4.21", "vite": "7.3.1", "vite-plugin-pages": "^0.33.2", "vite-plugin-solid": "^2.11.10", "vite-tsconfig-paths": "^6.0.4" }, "bin": { "satone": "src/cli.ts" } }, "sha512-zydkwG0+TMDK0p0eiJ4rVM1D3ld4GjBipDV5xGIU9joYsB4uLQDeqZj8AvKtcgDrFB5ej4Ccqm09T9QaiGh8jA=="],
 
     "scheduler": ["scheduler@0.27.0", "", {}, "sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q=="],
 
@@ -1406,6 +1408,8 @@
     "slash": ["slash@3.0.0", "", {}, "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q=="],
 
     "smob": ["smob@1.5.0", "", {}, "sha512-g6T+p7QO8npa+/hNx9ohv1E5pVCmWrVCUzUXJyLdMmftX6ER0oiWY/w9knEonLpnOp6b6FenKnMfR8gqwWdwig=="],
+
+    "smol-totp": ["smol-totp@1.0.0", "", { "dependencies": { "@noble/hashes": "^2.0.1", "@scure/base": "^2.0.0" } }, "sha512-ShYmqo8lnd/8khC0uM1SyJRPCv3mrWzQCJ0DYMC3yvZr/TqMt+Ic1wK3WBt/dQw8NVVWWbPxDJUQMqyk4U7nbw=="],
 
     "solid-js": ["solid-js@1.9.10", "", { "dependencies": { "csstype": "^3.1.0", "seroval": "~1.3.0", "seroval-plugins": "~1.3.0" } }, "sha512-Coz956cos/EPDlhs6+jsdTxKuJDPT7B5SVIWgABwROyxjY7Xbr8wkzD68Et+NxnV7DLJ3nJdAC2r9InuV/4Jew=="],
 
@@ -1537,7 +1541,7 @@
 
     "unicode-property-aliases-ecmascript": ["unicode-property-aliases-ecmascript@2.2.0", "", {}, "sha512-hpbDzxUY9BFwX+UeBnxv3Sh1q7HFxj48DTmXchNgRa46lO8uj3/1iEn3MiNUYTg1g9ctIqXCCERn8gYZhHC5lQ=="],
 
-    "unilim": ["unilim@1.1.0", "", { "dependencies": { "@literate.ink/pdf-inspector": "^1.0.0", "@scure/base": "^2.0.0", "cheerio": "^1.1.2", "luxon": "^3.7.2", "schwi": "^0.8.0" } }, "sha512-PpczBkHXMYv/MCLkf4BW3tRI4lVpU1LXnm/i/UpPpeSszI3Agp5OzTpOE1vpj3d80Q9TYL0CkkNz95WIzkqKDQ=="],
+    "unilim": ["unilim@2.0.0", "", { "dependencies": { "@literate.ink/pdf-inspector": "^1.0.0", "@scure/base": "^2.0.0", "cheerio": "^1.1.2", "luxon": "^3.7.2", "schwi": "^0.8.0", "smol-totp": "^1.0.0" } }, "sha512-wAXP3kge6iHRR+8rqDEjCC6xkFtkfRyjh10s+DdkvKzWHR5WhztwFmNyjCJBD+ne9WRG+ES+NT3KqDdtjcSSMA=="],
 
     "unique-string": ["unique-string@2.0.0", "", { "dependencies": { "crypto-random-string": "^2.0.0" } }, "sha512-uNaeirEPvpZWSgzwsPGtU2zVSTrn/8L5q/IexZmH0eH6SA73CmAA5U4GwORTxQAZs95TAXLNqeLoPPNO5gZfWg=="],
 

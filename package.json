@@ -30,10 +30,10 @@
     "localforage": "^1.10.0",
     "luxon": "^3.7.2",
     "mongoose": "^9.1.3",
-    "satone": "^0.0.13",
+    "satone": "^0.0.15",
     "solid-js": "^1.9.10",
     "swiper": "^12.0.3",
-    "unilim": "1.1.0"
+    "unilim": "^2.0.0"
   },
   "author": "Mikkel ALMONTE--RINGAUD <contact@vexcited.com> (https://github.com/Vexcited)",
   "repository": "github:Vexcited/WebTimetableLimogesIUTCS",
