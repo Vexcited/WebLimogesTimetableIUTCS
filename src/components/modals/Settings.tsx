@@ -107,6 +107,39 @@ export const SettingsModal: Component<{ open: boolean, setOpen: Setter<boolean> 
         </section>
 
         <section>
+          <h3 class="text-[rgb(240,240,240)] text-[18px] mb-2">
+            Thème
+          </h3>
+
+          <div class="flex gap-2">
+            <SelectionButton
+              content="Système"
+              active={getUserCustomizationKey('theme') === "system"}
+              onClick={() => setUserCustomization({
+                ...preferences.customization,
+                theme: 'system'
+              })}
+            />
+            <SelectionButton
+              content="Clair"
+              active={getUserCustomizationKey('theme') === "light"}
+              onClick={() => setUserCustomization({
+                ...preferences.customization,
+                theme: 'light'
+              })}
+            />
+            <SelectionButton
+              content="Sombre"
+              active={getUserCustomizationKey('theme') === "dark"}
+              onClick={() => setUserCustomization({
+                ...preferences.customization,
+                theme: 'dark'
+              })}
+            />
+          </div>
+        </section>
+
+        <section>
           <div class="flex items-center gap-2 mb-2">
             <h3 class="text-[rgb(240,240,240)] text-[18px] flex">
               Couleur de l'interface

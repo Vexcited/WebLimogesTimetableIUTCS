@@ -40,7 +40,7 @@ const MobileDayTimetable: Component<{
         </div>
       </div>
 
-      <div class="bg-[rgb(21,21,21)] rounded-lg py-6 mx-4"
+      <div class="bg-[rgb(245,245,245)] dark:bg-[rgb(21,21,21)] rounded-lg py-6 mx-4"
         classList={{
           "border-2 border-red": props.isToday
         }}

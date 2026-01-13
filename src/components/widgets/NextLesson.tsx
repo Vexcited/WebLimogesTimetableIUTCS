@@ -25,7 +25,7 @@ const NextLessonWidget: Component<INextLessonWidget> = (props) => {
     <div class="py-3 px-4">
       <div class="flex flex-col gap-2">
         <div class="flex justify-between gap-2">
-          <h2 class="text-lg text-[rgb(240,240,240)]">
+          <h2 class="text-lg text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
             {getLessonContentType(props.lesson)}
           </h2>
 
@@ -41,11 +41,11 @@ const NextLessonWidget: Component<INextLessonWidget> = (props) => {
           </div>
         </div>
 
-        <p class="text-sm text-[rgb(225,225,225)]">
+        <p class="text-sm text-[rgb(75,75,75)] dark:text-[rgb(225,225,225)]">
           {getLessonDescription(props.lesson)} avec {shortToFullTeacherName(props.lesson.content.teacher)?.name ?? props.lesson.content.teacher}
         </p>
 
-        <p class="text-xs text-[rgb(200,200,200)] ">
+        <p class="text-xs text-[rgb(75,75,75)] dark:text-[rgb(200,200,200)] ">
           Commence dans {remaining()} (à {getHourString(new Date(props.lesson.start_date))})
         </p>
       </div>

@@ -32,14 +32,14 @@ const NextLessonPreview: Component<{
     <>
       <div class="flex items-center gap-2 px-4">
         <MdiCalendar class="text-lg text-red" />
-        <p class="text-sm text-[rgb(240,240,240)]">
+        <p class="text-sm text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
           Le prochain est {farString()} à <span class="text-red font-medium">{timeString()}</span>
         </p>
       </div>
 
       <div class="my-2 h-[1px] border-b border-b-[rgb(50,50,50)]" />
 
-      <p class="text-xs px-4 tablet:text-sm text-[rgb(240,240,240)]">
+      <p class="text-xs px-4 tablet:text-sm text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
         Prochain: {props.next_lesson.type} de <span class="text-red font-medium">{getLessonContentType(props.next_lesson)}</span> ({getLessonDescription(props.next_lesson)}) en <span class="text-red font-medium">{props.next_lesson.content.room}</span> avec {shortToFullTeacherName(props.next_lesson.content.teacher)?.name ?? props.next_lesson.content.teacher}
       </p>
     </>
@@ -51,7 +51,7 @@ const DoneForTodayWidget: Component<IDoneForTodayWidget> = (props) => {
     <div class="flex flex-col gap-1 py-3">
       <div class="flex items-center gap-2 px-4">
         <MdiCheck class="text-lg text-red" />
-        <p class="text-sm text-[rgb(240,240,240)]">
+        <p class="text-sm text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
           Les cours d'aujourd'hui sont terminés
         </p>
       </div>
@@ -60,7 +60,7 @@ const DoneForTodayWidget: Component<IDoneForTodayWidget> = (props) => {
         fallback={
           <div class="flex items-center gap-2 px-4">
             <MdiCalendar class="text-lg text-red" />
-            <p class="text-sm text-[rgb(240,240,240)]">
+            <p class="text-sm text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
               Vous n'avez pas cours demain !
             </p>
           </div>

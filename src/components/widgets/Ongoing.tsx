@@ -24,7 +24,7 @@ const OngoingWidget: Component<IOngoingWidget> = (props) => {
   })
 
   return (
-    <div class="px-4 flex text-sm divide-x-2 divide-[rgb(50,50,50)]">
+    <div class="px-4 flex text-sm divide-x-2 divide-[rgb(230,230,230)] dark:divide-[rgb(50,50,50)]">
       <div class="py-3 flex flex-col w-full"
         classList={{
           "pr-3": Boolean(props.next_lesson)
@@ -32,22 +32,22 @@ const OngoingWidget: Component<IOngoingWidget> = (props) => {
       >
         <div class="flex flex-col gap-0.5">
           <div class="flex justify-between">
-            <p class="text-[rgb(240,240,240)]">
+            <p class="text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
               {getLessonContentType(props.lesson)}
             </p>
-            <p class="bg-red px-2 rounded-full font-medium"
+            <p class="bg-red/40 dark:bg-red px-2 rounded-full font-medium"
               style={{ color: textColorOnBG() }}
             >
               {props.lesson.content.room}
             </p>
           </div>
 
-          <p class="text-xs text-[rgb(190,190,190)]">
+          <p class="text-xs text-[rgb(150,150,150)] dark:text-[rgb(190,190,190)]">
             {props.lesson.type} avec {shortToFullTeacherName(props.lesson.content.teacher)?.name ?? props.lesson.content.teacher}
           </p>
         </div>
 
-        <p class="text-xs pt-2 text-[rgb(200,200,200)]">
+        <p class="text-xs pt-2 text-[rgb(120,120,120)] dark:text-[rgb(200,200,200)]">
           Fin <span class="text-red">dans {remaining()}</span>
         </p>
       </div>
@@ -57,22 +57,22 @@ const OngoingWidget: Component<IOngoingWidget> = (props) => {
           <div class="pl-4 py-3 w-full">
             <div class="flex flex-col gap-0.5">
               <div class="flex justify-between">
-                <p class="text-[rgb(240,240,240)]">
+                <p class="text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
                   {getLessonContentType(next_lesson())}
                 </p>
-                <p class="bg-red px-2 rounded-full font-medium"
+                <p class="bg-red/40 dark:bg-red px-2 rounded-full font-medium"
                   style={{ color: textColorOnBG() }}
                 >
                   {next_lesson().content.room}
                 </p>
               </div>
 
-              <p class="text-xs text-[rgb(190,190,190)]">
+              <p class="text-xs text-[rgb(150,150,150)] dark:text-[rgb(190,190,190)]">
                 {next_lesson().type} avec {shortToFullTeacherName(next_lesson().content.teacher)?.name ?? next_lesson().content.teacher}
               </p>
             </div>
 
-            <p class="text-xs pt-2 text-[rgb(200,200,200)]">
+            <p class="text-xs pt-2 text-[rgb(120,120,120)] dark:text-[rgb(200,200,200)]">
               Débute <span class="text-red">{nextLessonRemaining() === remaining() ? "à la suite" : "dans " + nextLessonRemaining()}</span>
             </p>
           </div>

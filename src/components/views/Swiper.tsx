@@ -245,18 +245,18 @@ const SwiperView: Component<{
 
   return (
     <>
-      <header class="relative z-20 p-4 pb-2 bg-red flex justify-between items-center"
+      <header class="relative z-20 p-4 pb-2 bg-red/20 dark:bg-red flex justify-between items-center"
         style={{ color: textColorOnBG() }}
       >
         <div class="flex flex-col">
           <p class="text-base sm:text-xl font-medium">
             {getGreeting()}
           </p>
-          <p class="text-xs sm:text-sm opacity-80">
+          <p class="text-xs sm:text-sm opacity-50">
             Vous êtes en G{preferences.main_group}{preferences.sub_group === 0 ? "A" : "B"}.
           </p>
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-2 text-[rgb(60,60,60)] dark:text-[rgb(20,20,20)]">
           <A href="/rooms" class="flex items-center justify-center p-2">
             <MdiTableEye class="text-lg" />
           </A>
@@ -297,25 +297,25 @@ const SwiperView: Component<{
         }}
       >
         {/* Color span under the widget. */}
-        <span class="absolute top-0 bg-red z-40 h-[32px] w-full" />
+        <span class="absolute top-0 bg-red/20 dark:bg-red z-40 h-[32px] w-full" />
 
         <div class="relative z-50 pt-2 mx-4">
           <div class="flex justify-between gap-4">
 
             {/** Actual widget's code. */}
-            <div class="bg-[rgb(27,27,27)] rounded-lg h-full shadow-xl mx-auto w-full tablet:(mx-0 max-w-[450px])">
+            <div class="bg-[rgb(250,250,250)] dark:bg-[rgb(27,27,27)] rounded-lg h-full shadow-md dark:shadow-xl mx-auto w-full tablet:(mx-0 max-w-[450px])">
               <Show when={!props.isCurrentlyInVacation}
                 fallback={
                   <div class="flex flex-col justify-center py-4 px-8 h-full gap-1">
                     <div class="flex gap-2 items-center">
                       <MdiCheck class="text-red text-lg" />
-                      <p class="text-[rgb(240,240,240)]">
+                      <p class="text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
                         Vous êtes actuellement en vacances !
                       </p>
                     </div>
                     <div class="flex gap-2 items-center">
                       <MdiCalendar class="text-red text-lg" />
-                      <p class="text-[rgb(240,240,240)]">
+                      <p class="text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)]">
                         Vous reprenez {vacationRemaining()}
                       </p>
                     </div>
@@ -324,7 +324,7 @@ const SwiperView: Component<{
               >
                 <Show when={widgetContent()} fallback={
                   <div class="flex justify-center items-center py-4 px-8 h-full">
-                    <p class="text-[rgb(240,240,240)] animate-pulse">
+                    <p class="text-[rgb(75,75,75)] dark:text-[rgb(240,240,240)] animate-pulse">
                       Chargement du contenu...
                     </p>
                   </div>
@@ -351,26 +351,26 @@ const SwiperView: Component<{
 
             {/** Week selector on ">= tablet" screens. */}
             <Show when={isTablet()}>
-              <div class="bg-[rgb(27,27,27)] rounded-lg h-full shadow-xl">
+              <div class="bg-[rgb(250,250,250)] dark:bg-[rgb(27,27,27)] rounded-lg h-full shadow dark:shadow-xl">
                 <div class="flex flex-col items-center justify-center gap-2 px-4 py-4 laptop-sm:(flex-row justify-between gap-6 px-8) h-full">
                   <div class="flex flex-col flex-shrink-0">
-                    <p class="text-lg text-[rgb(240,240,240)]">
+                    <p class="text-lg text-[rgb(20,20,20)] dark: text-[rgb(240,240,240)]">
                       {props.selectedWeekNumber === -1 ? "Récupération..." : `Semaine ${props.selectedWeekNumber}`}
                       <Show when={timingsOfLessonsInWeek()}>
                         {timings => (
-                          <span class="ml-8px text-sm text-[rgb(150,150,150)]">
+                          <span class="ml-8px text-sm text-[rgb(40,40,40)] dark:text-[rgb(150,150,150)]">
                             {timings()}
                           </span>
                         )}
                       </Show>
                     </p>
-                    <p class="text-sm text-[rgb(190,190,190)]">
+                    <p class="text-sm text-[rgb(100,100,100)] dark:text-[rgb(190,190,190)]">
                       {props.header ? (
                         `Du ${getSmolDayString(new Date(props.header.start_date))} au ${getSmolDayString(new Date(props.header.end_date))}`
                       ) : (props.error ? "Oups, y a un problème..." : "En attente de l'EDT...")}
                     </p>
                   </div>
-                  <div class="flex gap-3 items-center w-full text-[rgb(240,240,240)]">
+                  <div class="flex gap-3 items-center w-full text-[rgb(40,40,40)] dark:text-[rgb(240,240,240)]">
                     <button type="button" class="p-1 bg-red/20 hover:bg-red active:bg-red/60 border border-red rounded-full laptop-sm:(w-auto p-1.5) w-full flex justify-center items-center"
                       onClick={() => goToPreviousWeek()}
                     >
