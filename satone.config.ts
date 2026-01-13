@@ -5,6 +5,9 @@ import icons from "unplugin-icons/vite";
 import { VitePWA as pwa } from "vite-plugin-pwa";
 
 export default defineConfig({
+  swagger: {
+    path: "api"
+  },
   plugins: [
     icons({ compiler: "solid" }),
     unocss(),
