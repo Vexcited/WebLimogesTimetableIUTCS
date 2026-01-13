@@ -557,7 +557,7 @@ const SwiperView: Component<{
           Réalisé avec <MdiHeart class="text-red" /> par <a class="font-medium hover:underline text-red" href="https://github.com/Vexcited">Mikkel</a>
         </p>
 
-        <a href={`https://github.com/Vexcited/WebLimogesTimetableIUTCS/tree/${__APP_COMMIT_SHA__ === "dev" ? "main" : __APP_COMMIT_SHA__}`} class="text-xs pt-1 text-red/80 hover:(underline text-red)">
+        <a href={`https://github.com/Vexcited/WebTimetableLimogesIUTCS/tree/${__APP_COMMIT_SHA__ === "dev" ? "main" : __APP_COMMIT_SHA__}`} class="text-xs pt-1 text-red/80 hover:(underline text-red)">
           SHA:{__APP_COMMIT_SHA__}
         </a>
       </footer>

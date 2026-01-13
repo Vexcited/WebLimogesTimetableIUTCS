@@ -25,7 +25,7 @@ export interface GitHubCommitCompareResponse {
  * Compare the given commit SHA with the main (latest commit) from GitHub.
  */
 export const getGitHubCommitCompare = async (commit_sha: string): Promise<GitHubCommitCompareResponse> => {
-  const response = await fetch(`https://api.github.com/repos/Vexcited/WebLimogesTimetableIUTCS/compare/${commit_sha}...main`, {
+  const response = await fetch(`https://api.github.com/repos/Vexcited/WebTimetableLimogesIUTCS/compare/${commit_sha}...main`, {
     headers: {
       "Accept": "application/vnd.github+json",
       "X-GitHub-Api-Version": "2022-11-28"
